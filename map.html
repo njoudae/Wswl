@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>الخريطة</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    body { font-family: Arial; margin: 0; padding: 0; background-color: #f2f2f2; }
+    h2 { text-align: center; margin-top: 20px; }
+    #map { height: 90vh; width: 95vw; margin: auto; border-radius: 10px; }
+  </style>
+</head>
+<body>
+
+<h2>الخريطة</h2>
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+const startPoint = [18.4729636, 42.4155847];
+const destination = [18.4196375, 42.4577191];
+const orsApiKey = "eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6ImQyMWY4YzRkMWM1NjRlYzhiYzNmNTYwYmEzYmRlYmQwIiwiaCI6Im11cm11cjY0In0=";
+
+const map = L.map('map').setView(startPoint, 13);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap'
+}).addTo(map);
+
+L.marker(startPoint).addTo(map).bindPopup('🚚 نقطة النهاية').openPopup();
+L.marker(destination).addTo(map).bindPopup('🚚 نقطة البداية');
+
+// جلب المسار من OpenRouteService
+fetch(`https://api.openrouteservice.org/v2/directions/driving-car?api_key=${orsApiKey}&start=${startPoint[1]},${startPoint[0]}&end=${destination[1]},${destination[0]}`)
+  .then(response => response.json())
+  .then(data => {
+    const coords = data.features[0].geometry.coordinates;
+    const latlngs = coords.map(coord => [coord[1], coord[0]]);
+    L.polyline(latlngs, { color: 'green', weight: 5 }).addTo(map);
+    map.fitBounds(L.polyline(latlngs).getBounds());
+  })
+  .catch(error => {
+    console.error("🚫 خطأ في جلب المسار:", error);
+    alert("تعذر تحميل الطريق الحقيقي، سيتم رسم خط مباشر.");
+    L.polyline([startPoint, destination], { color: 'orange', dashArray: '5,5' }).addTo(map);
+  });
+
+// 🔵 تحديد موقع المستخدم الحالي
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      const userLatLng = [position.coords.latitude, position.coords.longitude];
+
+      // رسم علامة على الموقع الحالي
+      const currentIcon = L.divIcon({
+        className: 'custom-marker',
+        html: '📍',
+        iconSize: [30, 30],
+        iconAnchor: [15, 15]
+      });
+
+      L.marker(userLatLng, { icon: currentIcon })
+        .addTo(map)
+        .bindPopup('📍 موقعك الحالي')
+        .openPopup();
+
+      console.log('✅ تم تحديد الموقع الحالي:', userLatLng);
+    },
+    (error) => {
+      console.warn('❌ تعذر الحصول على الموقع:', error.message);
+      alert('تعذر الحصول على موقعك الحالي. تأكد من تفعيل الموقع.');
+    }
+  );
+} else {
+  alert("المتصفح لا يدعم تحديد الموقع الجغرافي.");
+}
+
+</script>
+
+
+</body>
+</html>
