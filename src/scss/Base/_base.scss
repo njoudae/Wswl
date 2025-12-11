@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    line-height: inherit;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0 !important;
+    min-height: 100dvh;
+    min-width: 100dvw;
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    margin-block: auto;
+    margin-inline: auto;
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    background: #222;
+    color: #222;
+    margin: 0;
+
+    @include flex-element(column, center, center);
+}
+
+main {
+    min-height: 85dvh;
+    width: var(--width-full);
+    height: 100%;
+    overflow-x: hidden;
+
+    height: max-content;
+    overflow-y: hidden;
+    @include flex-element(column, flex-start, stretch);
+    > * {
+        width: var(--width-full);
+    }
+}
+main.phone {
+    overflow-x: hidden !important;
+    overflow-y: scroll !important;
+
+    width: 402px;
+    min-width: 402px;
+    max-width: 402px;
+
+    height: 874px;
+    min-height: 874px;
+    max-height: 874px;
+
+    background: #fff;
+
+    @extend .radius-xxl;
+    position: relative;
+    padding-block-start: var(--gap-70);
+    padding-inline: var(--gap-16);
+}

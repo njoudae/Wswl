@@ -1,0 +1,37 @@
+/**
+    * Available classes for radius:
+
+    * - radius-none == radius -> 0px
+    * - radius-xs == radius -> 2px
+    * - radius-sm == radius -> 4px
+    * - radius-md  == radius -> 8px
+    * - radius-lg == radius -> 16px
+    * - radius-xl == radius -> 24px
+    * - radius-full == radius -> 100%
+
+    */
+
+.radius-none {
+    @include radius(none);
+}
+.radius-xs {
+    @include radius(xs);
+}
+.radius-sm {
+    @include radius(sm);
+}
+.radius-md {
+    @include radius(md);
+}
+.radius-lg {
+    @include radius(lg);
+}
+.radius-xl {
+    @include radius(xl);
+}
+.radius-xxl {
+    @include radius(xxl);
+}
+.radius-full {
+    @include radius(full);
+}

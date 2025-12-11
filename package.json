@@ -1,0 +1,17 @@
+{
+  "name": "wswl",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "gulp dev",
+    "build": "gulp build",
+    "clean": "gulp clean"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.0.0",
+    "del": "^7.0.0",
+    "gulp": "^5.0.0",
+    "gulp-file-include": "^2.0.0",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.0.0"
+  }
+}

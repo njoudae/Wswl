@@ -1,0 +1,48 @@
+/**
+    * Available classes for shadows:
+
+    * - shadow-xs
+    * - shadow-sm
+    * - shadow-md
+    * - shadow-lg
+    * - shadow-xl
+    * - shadow-2xl
+    * - shadow-3xl
+    * - shadow-none
+
+    */
+
+.shadow-xs {
+    box-shadow: var(--shadow-xs);
+}
+.shadow-sm {
+    box-shadow: var(--shadow-sm);
+}
+.shadow-md {
+    box-shadow: var(--shadow-md);
+}
+.shadow-lg {
+    box-shadow: var(--shadow-lg);
+}
+.shadow-xl {
+    box-shadow: var(--shadow-xl);
+}
+.shadow-2xl {
+    box-shadow: var(--shadow-2xl);
+}
+
+.shadow-3xl {
+    box-shadow: var(--shadow-3xl);
+}
+
+.shadow-none {
+    box-shadow: none;
+}
+
+.mc-shadow {
+    box-shadow: var(--mc-shadow);
+}
+
+.mc-shadow-2 {
+    box-shadow: var(--mc-shadow-2);
+}

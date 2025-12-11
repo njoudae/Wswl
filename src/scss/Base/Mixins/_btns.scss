@@ -1,0 +1,698 @@
+// Default BTN styles
+%default-btn {
+    width: fit-content;
+    transition: var(--transition-3ms);
+
+    border-radius: var(--border-radius-4);
+
+    @include flex-element(row, center, center) {
+        column-gap: var(--gap-10);
+    }
+
+    & i,
+    & svg {
+        @include flex-element(row, center, center);
+    }
+    & .btn-text {
+        font-family: var(--default-font-family) !important;
+        @include flex-element(row, start, center) {
+            column-gap: var(--gap-10);
+        }
+    }
+    & .bi {
+        display: flex;
+        align-items: center;
+    }
+
+    &[disabled],
+    &[disabled]:hover,
+    &[disabled]:focus,
+    &[disabled]:active {
+        cursor: not-allowed;
+        @extend .gray-400;
+        @extend .gray-200-bg;
+    }
+}
+
+// Default Links styles
+%default-link {
+    @extend .transparent-bg;
+    @extend .border-transparent;
+    @extend .border-none;
+
+    width: fit-content;
+    transition: var(--transition-3ms);
+    outline: none;
+    padding: 0 !important;
+
+    @include flex-element(row, center, center) {
+        column-gap: var(--gap-10);
+    }
+    & i,
+    & svg {
+        @include flex-element(row, center, center);
+        margin-block-end: -4px;
+    }
+    & .btn-text {
+        font-family: var(--default-font-family) !important;
+        @include flex-element(row, start, center) {
+            column-gap: var(--gap-10);
+        }
+    }
+    & .bi {
+        display: flex;
+        align-items: center;
+    }
+
+    &[disabled],
+    &[disabled]:hover,
+    &[disabled]:focus,
+    &[disabled]:active {
+        cursor: not-allowed;
+        @extend .gray-400;
+        text-decoration: none !important;
+    }
+}
+
+// Menu Link styles
+%menu-link__container {
+    @extend .font-16;
+    @extend .weight-medium;
+    @extend .radius-sm;
+    @extend .transition-3ms;
+    @include flex-element(column, start, center) {
+        gap: var(--gap-12);
+    }
+    padding: {
+        inline: var(--gap-8);
+    }
+    &,
+    &:hover,
+    &:focus,
+    &:focus-within,
+    &:active {
+        @extend .outline-2;
+        @extend .outline-transparent;
+    }
+    &::after {
+        content: "";
+        height: var(--gap-6);
+        width: 100%;
+        display: block;
+        @extend .radius-xl;
+        @extend .transparent-bg;
+    }
+    &:focus-within {
+        @extend .outline-black;
+    }
+    &:hover {
+        @extend .gray-100-bg;
+        &::after {
+            @extend .gray-400-bg;
+        }
+    }
+    &.active {
+        @extend .gray-200-bg;
+        &::after {
+            @extend .primary-600-bg;
+        }
+    }
+}
+%menu-link__container-mobile {
+    @extend .font-18;
+    @extend .weight-regular;
+    @extend .radius-sm;
+    @extend .transition-3ms;
+    @extend .border-gray-400;
+
+    position: static;
+    height: fit-content;
+
+    width: 100%;
+    text-align: center;
+    @include flex-element(row, center, center);
+
+    @include respond(tab-port) {
+        font-size: var(--font-16);
+    }
+}
+
+%menu-link {
+    @extend .transparent-bg;
+    @extend .border-none;
+    @extend .black;
+    @extend .font-16;
+    @extend .weight-medium;
+    padding: {
+        block-start: var(--gap-24);
+        block-end: var(--gap-8);
+        inline: var(--gap-8);
+    }
+
+    &:after {
+        display: none;
+    }
+    font-family: var(--default-font-family) !important;
+
+    @include flex-element(row, start, center) {
+        column-gap: var(--gap-10);
+    }
+}
+%menu-link-mobile {
+    @extend .gray-900;
+    height: 100%;
+    width: 100%;
+    padding: {
+        block-start: var(--gap-8);
+        block-end: var(--gap-10);
+        inline: var(--gap-15);
+    }
+    @extend .black;
+    @extend .transparent-bg;
+    @extend .border-none;
+    &:after {
+        display: none;
+    }
+    &.dropdown-toggle.show {
+        height: auto;
+    }
+}
+
+//
+@mixin menu-link-container($target: desktop) {
+    @if $target == desktop {
+        @extend %menu-link__container;
+    }
+    @if $target == mobile {
+        @extend %menu-link__container-mobile;
+    }
+}
+@mixin menu-link($target: desktop) {
+    @if $target == desktop {
+        @extend %menu-link;
+    }
+    @if $target == mobile {
+        @extend %menu-link-mobile;
+    }
+}
+
+// BTNs Mixin
+
+/*
+    Btn $size options: sm || md || lg
+*/
+
+@mixin btn-size($size) {
+    @if $size == lg {
+        padding: {
+            inline: var(--gap-16);
+            block-start: var(--gap-6);
+            block-end: var(--gap-8);
+        }
+        & .btn-text {
+            @extend .font-16;
+            svg {
+                width: var(--gap-20);
+                height: var(--gap-20);
+            }
+        }
+    }
+    @if $size == md {
+        padding: {
+            inline: var(--gap-12);
+            block-start: var(--gap-4);
+            block-end: var(--gap-6);
+        }
+        & .btn-text {
+            @extend .font-14;
+            svg {
+                width: var(--gap-16);
+                height: var(--gap-16);
+            }
+        }
+    }
+    @if $size == sm {
+        padding: {
+            inline: var(--gap-8);
+            block-start: var(--gap-4);
+            block-end: var(--gap-6);
+        }
+        & .btn-text {
+            @extend .font-12;
+            svg {
+                width: var(--gap-12);
+                height: var(--gap-12);
+            }
+        }
+    }
+    @if $size == xs {
+        padding: {
+            inline: var(--gap-8);
+            block-start: var(--gap-4);
+            block-end: var(--gap-6);
+        }
+        & .btn-text {
+            @extend .font-10;
+            svg {
+                width: var(--gap-10);
+                height: var(--gap-10);
+            }
+        }
+    }
+
+    @if $size == custom {
+        padding: {
+            inline: var(--gap-26);
+        }
+        & .btn-text {
+            @extend .font-18;
+        }
+
+        // &:active,
+        // &:focus {
+        //     & .btn-text {
+        //         @extend .font-30;
+        //     }
+        // }
+    }
+}
+
+/*
+    Btn $style options:
+    primary-btn || secondary-btn
+    secondary-outline-btn || secondary-outline-white-btn
+    transparent-btn || custom-btn
+    subtle-btn || transparent-white-btn
+
+*/
+
+@mixin btn-style($style) {
+    @if $style == primary-btn {
+        @extend %default-btn;
+        @extend .primary-600-bg;
+        @extend .white;
+
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            @extend .border-2;
+            @extend .outline-2;
+            @extend .border-transparent;
+            @extend .outline-transparent;
+        }
+
+        &:hover {
+            @extend .primary-700-bg;
+        }
+        &:active {
+            @extend .primary-900-bg;
+        }
+        &:focus {
+            @extend .primary-600-bg;
+            @extend .border-white;
+            @extend .outline-black;
+        }
+    }
+    @if $style == neutral-btn {
+        @extend %default-btn;
+        @extend .white-bg;
+        @extend .black;
+
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            @extend .border-2;
+            @extend .outline-2;
+            @extend .border-transparent;
+            @extend .outline-transparent;
+        }
+
+        &:hover {
+            background-color: rgba(var(--white-rgb), 0.8);
+        }
+        &:active {
+            background-color: rgba(var(--white-rgb), 0.6);
+        }
+
+        &:focus {
+            @extend .white-bg;
+            @extend .outline-white;
+            @extend .border-black;
+        }
+    }
+    @if $style == secondary-btn {
+        @extend %default-btn;
+        @extend .black;
+        @extend .gray-100-bg;
+
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            @extend .border-2;
+            @extend .outline-2;
+            @extend .border-transparent;
+            @extend .outline-transparent;
+        }
+
+        &:hover {
+            @extend .gray-200-bg;
+            @extend .border-gray-200;
+        }
+        &:active {
+            @extend .gray-200-bg;
+        }
+        &:focus {
+            @extend .gray-100-bg;
+            @extend .border-gray-100;
+            @extend .outline-black;
+        }
+    }
+    @if $style == secondary-outline-btn {
+        @extend %default-btn;
+        @extend .black;
+        @extend .transparent-bg;
+        @extend .border-gray-300;
+
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            @extend .border-1;
+            @extend .outline-2;
+            @extend .outline-transparent;
+        }
+
+        &:hover {
+            @extend .gray-100-bg;
+            @extend .border-gray-200;
+        }
+        &:active {
+            @extend .gray-300-bg;
+        }
+        &:focus {
+            @extend .transparent-bg;
+            @extend .border-gray-300;
+            @extend .outline-black;
+        }
+    }
+    @if $style == secondary-outline-white-btn {
+        @extend %default-btn;
+        @extend .white;
+        @extend .border-gray-300;
+
+        background-color: rgba(255, 255, 255, 0.2);
+
+        &:hover {
+            @extend .gray-100-bg;
+            @extend .mc-green-primary;
+        }
+    }
+    @if $style == transparent-btn {
+        @extend %default-btn;
+        @extend .transparent-bg;
+        @extend .black;
+
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            @extend .border-2;
+            @extend .outline-2;
+            @extend .border-transparent;
+            @extend .outline-transparent;
+        }
+
+        &:hover {
+            @extend .primary-700;
+        }
+        &:active {
+            @extend .primary-900;
+        }
+        &:focus {
+            @extend .black;
+            @extend .outline-black;
+        }
+    }
+    @if $style == transparent-white-btn {
+        @extend %default-btn;
+        @extend .transparent-bg;
+        @extend .white;
+
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            @extend .border-2;
+            @extend .outline-2;
+            @extend .border-transparent;
+            @extend .outline-transparent;
+        }
+
+        &:hover {
+            @extend .primary-400;
+        }
+        &:active {
+            @extend .primary-300;
+        }
+        &:focus {
+            @extend .white;
+            @extend .outline-white;
+        }
+    }
+
+    @if $style == custom-btn {
+        @extend %default-btn;
+        @extend .transparent-bg;
+        @extend .gray-400;
+
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            @extend .border-2;
+            @extend .outline-2;
+            @extend .border-transparent;
+            @extend .outline-transparent;
+        }
+
+        &:hover {
+            @extend .primary-500;
+        }
+        // &:active,
+        // &:focus {
+        //     padding-block: var(--gap-10);
+
+        //     @extend .primary-800-bg;
+        //     @extend .white;
+
+        //     & .btn-text {
+        //         @extend .font-30;
+        //     }
+        // }
+    }
+
+    @if $style == subtle-btn {
+        @extend %default-btn;
+        @extend .transparent-bg;
+        @extend .black;
+
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            @extend .border-2;
+            @extend .outline-2;
+            @extend .border-transparent;
+            @extend .outline-transparent;
+        }
+
+        &:hover {
+            @extend .gray-100-bg;
+        }
+        &:active {
+            @extend .gray-200-bg;
+        }
+        &:focus {
+            @extend .transparent-bg;
+            @extend .black;
+            @extend .outline-black;
+        }
+    }
+    @if $style == subtle-white-btn {
+        @extend %default-btn;
+        @extend .transparent-bg;
+        @extend .white;
+
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            @extend .border-2;
+            @extend .outline-2;
+            @extend .border-transparent;
+            @extend .outline-transparent;
+        }
+
+        &:hover {
+            background-color: rgba(var(--white-rgb), 0.2);
+        }
+        &:active {
+            background-color: rgba(var(--white-rgb), 0.4);
+        }
+        &:focus {
+            @extend .transparent-bg;
+            @extend .white;
+            @extend .outline-white;
+        }
+    }
+}
+
+/*
+    Link $style options:
+
+
+*/
+@mixin link-style($style) {
+    @if $style == primary-link {
+        @extend %default-link;
+        @extend .primary-600;
+
+        &:hover {
+            @extend .primary-400;
+        }
+        &:active {
+            @extend .primary-300;
+        }
+        &:focus {
+            @extend .primary-600;
+        }
+        &:visited {
+            @extend .primary-800;
+        }
+    }
+    @if $style == secondary-link {
+        @extend %default-link;
+        @extend .gray-700;
+
+        &:hover {
+            @extend .gray-500;
+        }
+        &:active {
+            @extend .gray-400;
+        }
+        &:focus {
+            @extend .gray-700;
+        }
+        &:visited {
+            @extend .primary-800;
+        }
+    }
+    @if $style == primary-underline-link {
+        @extend %default-link;
+        @extend .primary-600;
+
+        text-decoration: underline;
+
+        &:hover {
+            @extend .primary-400;
+        }
+        &:active {
+            @extend .primary-300;
+        }
+        &:focus {
+            @extend .primary-600;
+        }
+        &:visited {
+            @extend .primary-800;
+        }
+    }
+
+    @if $style == secondary-underline-link {
+        @extend %default-link;
+        @extend .gray-700;
+        text-decoration: underline;
+
+        &:hover {
+            @extend .gray-500;
+        }
+        &:active {
+            @extend .gray-400;
+        }
+        &:focus {
+            @extend .gray-700;
+        }
+        &:visited {
+            @extend .primary-800;
+        }
+    }
+    @if $style == white-link {
+        @extend %default-link;
+        @extend .white;
+
+        &:hover,
+        &:active {
+            text-decoration: underline;
+        }
+
+        &:hover {
+            opacity: 0.8;
+        }
+        &:active {
+            opacity: 0.6;
+        }
+        &:focus {
+            @extend .white;
+        }
+        &:visited {
+            opacity: 0.9;
+        }
+    }
+    @if $style == white-underline-link {
+        @extend %default-link;
+        @extend .white;
+        text-decoration: underline;
+        &:hover {
+            opacity: 0.8;
+        }
+        &:active {
+            opacity: 0.6;
+        }
+        &:focus {
+            @extend .white;
+        }
+        &:visited {
+            opacity: 0.9;
+        }
+    }
+    @if $style == neutral-link {
+        @extend %default-link;
+        @extend .gray-700;
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            @extend .border-2;
+            @extend .outline-2;
+            @extend .border-transparent;
+            @extend .outline-transparent;
+        }
+
+        &:hover {
+            @extend .gray-500;
+            @extend .underline;
+        }
+        &:active {
+            @extend .gray-400;
+        }
+        &:focus {
+            @extend .black;
+            @extend .outline-black;
+        }
+        &:visited {
+            @extend .primary-800;
+        }
+    }
+}

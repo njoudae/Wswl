@@ -1,0 +1,113 @@
+// Typography Mixin
+
+/**
+    * Available colors:
+
+    * - primary
+    * - secondary
+    * - tertiary
+    * - white
+    * - error
+    * - warning
+    * - success
+    * - info
+    * - green-primary
+    * - green-secondary
+    * - green-tertiary
+
+    */
+@mixin paragraph-color($color) {
+    @if $color == primary {
+        color: var(--gray-950);
+    }
+    @if $color == primary-light {
+        color: var(--gray-700);
+    }
+    @if $color == secondary {
+        color: var(--gray-700);
+    }
+    @if $color == tertiary {
+        color: var(--gray-500);
+    }
+    @if $color == white {
+        color: var(--white);
+    }
+    @if $color == error {
+        color: var(--error-600);
+    }
+    @if $color == warning {
+        color: var(--warning-600);
+    }
+    @if $color == success {
+        color: var(--success-600);
+    }
+    @if $color == info {
+        color: var(--info-600);
+    }
+    @if $color == green-primary {
+        color: var(--primary-600);
+    }
+    @if $color == green-secondary {
+        color: var(--primary-600);
+    }
+    @if $color == green-tertiary {
+        color: var(--primary-500);
+    }
+    @if $color == green-dark {
+        color: var(--primary-800);
+    }
+    @content;
+}
+
+/**
+    * Available sizes for texts:
+
+    * - xl
+    * - lg
+    * - md
+    * - sm
+    * - xs
+    * - xxs
+
+    */
+
+@mixin paragraph-size($size) {
+    @extend .justify-text;
+    @extend .default-line-height;
+    @if $size == xl {
+        @extend .font-20;
+        @include respond(tab-port) {
+            font-size: var(--font-18);
+        }
+    }
+    @if $size == lg {
+        @extend .font-18;
+        @include respond(tab-port) {
+            font-size: var(--font-16);
+        }
+    }
+    @if $size == md {
+        @extend .font-16;
+        @include respond(tab-port) {
+            font-size: var(--font-14);
+        }
+    }
+    @if $size == sm {
+        @extend .font-14;
+        @include respond(tab-port) {
+            font-size: var(--font-12);
+        }
+    }
+    @if $size == xs {
+        @extend .font-12;
+        @include respond(tab-port) {
+            font-size: var(--font-10);
+        }
+    }
+    @if $size == xxs {
+        @extend .font-10;
+        @include respond(tab-port) {
+            font-size: var(--font-8);
+        }
+    }
+}

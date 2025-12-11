@@ -1,0 +1,343 @@
+// Containers
+.main-container {
+    @include block-container;
+}
+
+// -- Blocks Padding
+
+.blocks-bp-160 {
+    padding-block: var(--gap-160);
+    @include respond(tab-port) {
+        padding-block: var(--gap-120);
+    }
+    @include respond(phone) {
+        padding-block: var(--gap-80);
+    }
+}
+
+.blocks-bp-120 {
+    padding-block: var(--gap-120);
+    @include respond(tab-port) {
+        padding-block: var(--gap-100);
+    }
+    @include respond(phone) {
+        padding-block: var(--gap-60);
+    }
+}
+.blocks-bps-120 {
+    padding-block-start: var(--gap-120);
+    @include respond(tab-port) {
+        padding-block-start: var(--gap-100);
+    }
+    @include respond(phone) {
+        padding-block-start: var(--gap-60);
+    }
+}
+.blocks-bpe-120 {
+    padding-block-end: var(--gap-120);
+    @include respond(tab-port) {
+        padding-block-end: var(--gap-100);
+    }
+    @include respond(phone) {
+        padding-block-end: var(--gap-60);
+    }
+}
+
+.blocks-bp-100 {
+    padding-block: var(--gap-100);
+    @include respond(tab-port) {
+        padding-block: var(--gap-80);
+    }
+    @include respond(phone) {
+        padding-block: var(--gap-60);
+    }
+}
+.blocks-bp-90 {
+    padding-block: var(--gap-90);
+    @include respond(tab-port) {
+        padding-block: var(--gap-70);
+    }
+    @include respond(phone) {
+        padding-block: var(--gap-50);
+    }
+}
+
+.blocks-bps-100 {
+    padding-block-start: var(--gap-100);
+    @include respond(tab-port) {
+        padding-block-start: var(--gap-80);
+    }
+    @include respond(phone) {
+        padding-block-start: var(--gap-60);
+    }
+}
+.blocks-bpe-100 {
+    padding-block-end: var(--gap-100);
+    @include respond(tab-port) {
+        padding-block-end: var(--gap-80);
+    }
+    @include respond(phone) {
+        padding-block-end: var(--gap-60);
+    }
+}
+.blocks-bp-60 {
+    padding-block: var(--gap-60);
+    @include respond(tab-port) {
+        padding-block: var(--gap-40);
+    }
+    @include respond(phone) {
+        padding-block: var(--gap-30);
+    }
+}
+.blocks-bps-60 {
+    padding-block-start: var(--gap-60);
+    @include respond(tab-port) {
+        padding-block-start: var(--gap-40);
+    }
+    @include respond(phone) {
+        padding-block-start: var(--gap-30);
+    }
+}
+
+.blocks-bpe-40 {
+    padding-block-end: var(--gap-40);
+    @include respond(tab-port) {
+        padding-block-end: var(--gap-30);
+    }
+    @include respond(phone) {
+        padding-block-end: var(--gap-20);
+    }
+}
+.blocks-bpe-42 {
+    padding-block-end: var(--gap-42);
+    @include respond(tab-port) {
+        padding-block-end: var(--gap-30);
+    }
+    @include respond(phone) {
+        padding-block-end: var(--gap-20);
+    }
+}
+
+.blocks-bpe-46 {
+    padding-block-end: var(--gap-46);
+    @include respond(tab-port) {
+        padding-block-end: var(--gap-30);
+    }
+    @include respond(phone) {
+        padding-block-end: var(--gap-20);
+    }
+}
+.blocks-bpe-48 {
+    padding-block-end: var(--gap-48);
+    @include respond(tab-port) {
+        padding-block-end: var(--gap-30);
+    }
+    @include respond(phone) {
+        padding-block-end: var(--gap-20);
+    }
+}
+
+.blocks-bpe-60 {
+    padding-block-end: var(--gap-60);
+    @include respond(tab-port) {
+        padding-block-end: var(--gap-40);
+    }
+    @include respond(phone) {
+        padding-block-end: var(--gap-30);
+    }
+}
+.blocks-bp-30 {
+    padding-block: var(--gap-30);
+    @include respond(tab-port) {
+        padding-block: var(--gap-20);
+    }
+    @include respond(phone) {
+        padding-block: var(--gap-15);
+    }
+}
+.blocks-bps-30 {
+    padding-block-start: var(--gap-30);
+    @include respond(tab-port) {
+        padding-block-start: var(--gap-20);
+    }
+    @include respond(phone) {
+        padding-block-start: var(--gap-15);
+    }
+}
+.blocks-bpe-30 {
+    padding-block-end: var(--gap-30);
+    @include respond(tab-port) {
+        padding-block-end: var(--gap-20);
+    }
+}
+
+// -- Blocks Margin
+
+.blocks-bm-120 {
+    margin-block: var(--gap-120);
+    @include respond(tab-port) {
+        margin-block: var(--gap-100);
+    }
+    @include respond(phone) {
+        margin-block: var(--gap-60);
+    }
+}
+
+.blocks-bsm-120 {
+    margin-block-start: var(--gap-120);
+    @include respond(tab-port) {
+        margin-block-start: var(--gap-100);
+    }
+    @include respond(phone) {
+        margin-block-start: var(--gap-60);
+    }
+}
+.blocks-bem-120 {
+    margin-block-end: var(--gap-120);
+    @include respond(tab-port) {
+        margin-block-end: var(--gap-100);
+    }
+    @include respond(phone) {
+        margin-block-end: var(--gap-60);
+    }
+}
+
+.blocks-bm-100 {
+    margin-block: var(--gap-100);
+    @include respond(tab-port) {
+        margin-block: var(--gap-80);
+    }
+    @include respond(phone) {
+        margin-block: var(--gap-60);
+    }
+}
+.blocks-bsm-100 {
+    margin-block-start: var(--gap-100);
+    @include respond(tab-port) {
+        margin-block-start: var(--gap-80);
+    }
+    @include respond(phone) {
+        margin-block-start: var(--gap-60);
+    }
+}
+.blocks-bem-100 {
+    margin-block-end: var(--gap-100);
+    @include respond(tab-port) {
+        margin-block-end: var(--gap-80);
+    }
+    @include respond(phone) {
+        margin-block-end: var(--gap-60);
+    }
+}
+
+.blocks-bm-60 {
+    margin-block: var(--gap-60);
+    @include respond(tab-port) {
+        margin-block: var(--gap-40);
+    }
+    @include respond(phone) {
+        margin-block: var(--gap-30);
+    }
+}
+.blocks-bsm-60 {
+    margin-block-start: var(--gap-60);
+    @include respond(tab-port) {
+        margin-block-start: var(--gap-40);
+    }
+    @include respond(phone) {
+        margin-block-start: var(--gap-30);
+    }
+}
+.blocks-bem-60 {
+    margin-block-end: var(--gap-60);
+    @include respond(tab-port) {
+        margin-block-end: var(--gap-40);
+    }
+    @include respond(phone) {
+        margin-block-end: var(--gap-30);
+    }
+}
+
+.blocks-bm-40 {
+    margin-block: var(--gap-40);
+    @include respond(tab-port) {
+        margin-block: var(--gap-30);
+    }
+    @include respond(phone) {
+        margin-block: var(--gap-20);
+    }
+}
+.blocks-bsm-40 {
+    margin-block-start: var(--gap-40);
+    @include respond(tab-port) {
+        margin-block-start: var(--gap-30);
+    }
+    @include respond(phone) {
+        margin-block-start: var(--gap-20);
+    }
+}
+.blocks-bem-40 {
+    margin-block-end: var(--gap-40);
+    @include respond(tab-port) {
+        margin-block-end: var(--gap-30);
+    }
+    @include respond(phone) {
+        margin-block-end: var(--gap-20);
+    }
+}
+
+// -- Blocks gaps
+// gap-10, gap-15, gap-20, gap-30, gap-40, gap-60
+
+// column gaps
+.column-gap-10 {
+    column-gap: var(--gap-10);
+}
+.column-gap-15 {
+    column-gap: var(--gap-15);
+}
+.column-gap-20 {
+    column-gap: var(--gap-20);
+}
+.column-gap-30 {
+    column-gap: var(--gap-30);
+}
+.column-gap-40 {
+    column-gap: var(--gap-40);
+}
+.column-gap-60 {
+    column-gap: var(--gap-60);
+}
+// row gaps
+.row-gap-10 {
+    row-gap: var(--gap-10);
+}
+.row-gap-15 {
+    row-gap: var(--gap-15);
+}
+.row-gap-20 {
+    row-gap: var(--gap-20);
+}
+.row-gap-30 {
+    row-gap: var(--gap-30);
+}
+.row-gap-40 {
+    row-gap: var(--gap-40);
+}
+.row-gap-60 {
+    row-gap: var(--gap-60);
+}
+
+// -- default transition
+
+.transition-3ms {
+    transition: var(--transition-3ms);
+}
+.transition-5ms {
+    transition: var(--transition-5ms);
+}
+
+// -- default border
+.default-border {
+    border: 1px solid var(--border-gray);
+}

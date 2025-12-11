@@ -1,0 +1,27 @@
+// -- Radius Mixins --
+@mixin radius($radius) {
+    @if $radius == none {
+        border-radius: var(--border-radius-0);
+    }
+    @if $radius == xs {
+        border-radius: var(--border-radius-2);
+    }
+    @if $radius == sm {
+        border-radius: var(--border-radius-4);
+    }
+    @if $radius == md {
+        border-radius: var(--border-radius-8);
+    }
+    @if $radius == lg {
+        border-radius: var(--border-radius-16);
+    }
+    @if $radius == xl {
+        border-radius: var(--border-radius-24);
+    }
+    @if $radius == xxl {
+        border-radius: var(--border-radius-38);
+    }
+    @if $radius == full {
+        border-radius: var(--border-radius-full);
+    }
+}

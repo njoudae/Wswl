@@ -1,0 +1,86 @@
+/**
+    * Available classes for colors:
+
+    * - text-primary
+    * - text-secondary
+    * - text-tertiary
+    * - text-white
+    * - text-error
+    * - text-warning
+    * - text-success
+    * - text-info
+    * - text-primary-green
+    * - text-secondary-green
+    * - text-tertiary-green
+
+    * Available classes for sizes:
+
+    * - text-xl
+    * - text-lg
+    * - text-md
+    * - text-sm
+    * - text-xs
+    * - text-xxs
+
+    */
+
+// Text Sizes
+.system-text__xl {
+    @include paragraph-size(xl);
+}
+.system-text__lg {
+    @include paragraph-size(lg);
+}
+.system-text__md {
+    @include paragraph-size(md);
+}
+.system-text__sm {
+    @include paragraph-size(sm);
+}
+.system-text__xs {
+    @include paragraph-size(xs);
+}
+.system-text__xxs {
+    @include paragraph-size(xxs);
+}
+
+// Text Colors
+.system-text__primary {
+    @include paragraph-color(primary);
+}
+.system-text__primary-light {
+    @include paragraph-color(primary-light);
+}
+.system-text__secondary {
+    @include paragraph-color(secondary);
+}
+.system-text__tertiary {
+    @include paragraph-color(tertiary);
+}
+.system-text__white {
+    @include paragraph-color(white);
+}
+.system-text__error {
+    @include paragraph-color(error);
+}
+.system-text__warning {
+    @include paragraph-color(warning);
+}
+.system-text__success {
+    @include paragraph-color(success);
+}
+.system-text__info {
+    @include paragraph-color(info);
+}
+.system-text__primary-green {
+    @include paragraph-color(green-primary);
+}
+.system-text__secondary-green {
+    @include paragraph-color(green-secondary);
+}
+.system-text__tertiary-green {
+    @include paragraph-color(green-tertiary);
+}
+.system-text__green-dark {
+    @include paragraph-color(green-dark);
+}

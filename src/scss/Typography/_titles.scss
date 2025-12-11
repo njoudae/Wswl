@@ -1,0 +1,127 @@
+/**
+    * Available classes for colors:
+
+
+    * Available classes for sizes:
+
+    * - system-title__2xl
+    * - system-title__xl
+    * - system-title__lg
+    * - system-title__md
+    * - system-title__sm
+    * - system-title__xs
+
+    */
+
+.system-title__2xl {
+    @extend .font-62;
+    @extend .default-line-height;
+    @include respond(tab-land) {
+        font-size: var(--font-58) !important;
+    }
+    @include respond(tab-port) {
+        font-size: var(--font-52) !important;
+    }
+}
+.system-title__xl {
+    @extend .font-52;
+    @extend .default-line-height;
+    @include respond(tab-land) {
+        font-size: var(--font-52) !important;
+    }
+    @include respond(tab-port) {
+        font-size: var(--font-48) !important;
+    }
+}
+.system-title__lg {
+    @extend .font-42;
+    @extend .default-line-height;
+    @include respond(tab-land) {
+        font-size: var(--font-42) !important;
+    }
+    @include respond(tab-port) {
+        font-size: var(--font-32) !important;
+    }
+}
+.system-title__md {
+    @extend .font-32;
+    @extend .default-line-height;
+    @include respond(tab-land) {
+        font-size: var(--font-32) !important;
+    }
+    @include respond(tab-port) {
+        font-size: var(--font-26) !important;
+    }
+}
+.system-title__sm {
+    @extend .font-28;
+    @extend .default-line-height;
+    @include respond(tab-land) {
+        font-size: var(--font-26) !important;
+    }
+    @include respond(tab-port) {
+        font-size: var(--font-22) !important;
+    }
+}
+.system-title__xs {
+    @extend .font-20;
+    @extend .default-line-height;
+    @include respond(tab-land) {
+        font-size: var(--font-20) !important;
+    }
+    @include respond(tab-port) {
+        font-size: var(--font-18) !important;
+    }
+}
+.system-title__xxs {
+    @extend .font-18;
+    @extend .default-line-height;
+    @include respond(tab-land) {
+        font-size: var(--font-18) !important;
+    }
+    @include respond(tab-port) {
+        font-size: var(--font-16) !important;
+    }
+}
+
+// Title Colors
+
+.system-title__primary {
+    @include paragraph-color(primary);
+}
+.system-title__primary-light {
+    @include paragraph-color(primary-light);
+}
+.system-title__secondary {
+    @include paragraph-color(secondary);
+}
+.system-title__tertiary {
+    @include paragraph-color(tertiary);
+}
+.system-title__white {
+    @include paragraph-color(white);
+}
+.system-title__error {
+    @include paragraph-color(error);
+}
+.system-title__warning {
+    @include paragraph-color(warning);
+}
+.system-title__success {
+    @include paragraph-color(success);
+}
+.system-title__info {
+    @include paragraph-color(info);
+}
+.system-title__primary-green {
+    @include paragraph-color(green-primary);
+}
+.system-title__secondary-green {
+    @include paragraph-color(green-secondary);
+}
+.system-title__tertiary-green {
+    @include paragraph-color(green-tertiary);
+}
+.system-title__green-dark {
+    @include paragraph-color(green-dark);
+}
