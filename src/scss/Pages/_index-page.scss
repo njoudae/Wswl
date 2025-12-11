@@ -1,4 +1,54 @@
 .index-page {
     background:
         radial-gradient(circle at -10% -10%, rgba(90, 110, 60, 0.35), rgba(40, 45, 35, 0) 70%), #2b2e27 !important;
+
+    .status-bar {
+        &__section {
+            &::before {
+                content: "";
+                width: 200%;
+                height: 100%;
+                position: absolute;
+                bottom: 0;
+                left: -50%;
+                background:
+                    radial-gradient(circle at -10% -10%, rgba(90, 110, 60, 0.35), rgba(40, 45, 35, 0) 70%), #2b2e27 !important;
+            }
+        }
+
+        &__container {
+            img {
+                filter: invert(1);
+            }
+        }
+    }
+
+    .logo-section {
+        @include flex-element(row, center, center);
+
+        & > * {
+            padding-inline: var(--gap-30);
+        }
+
+        .logo__container {
+            border-inline-end: 0.5px solid #fff;
+        }
+
+        > h1 {
+            @extend .font-24;
+            color: var(--white);
+            font-weight: 400;
+        }
+    }
+
+    > .content {
+        justify-content: center !important;
+        gap: var(--gap-120) !important;
+    }
+
+    .btns-section {
+        @include flex-element(column, center, center) {
+            gap: var(--gap-16);
+        }
+    }
 }

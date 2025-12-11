@@ -1,0 +1,15 @@
+.home-indicator {
+    &__container {
+        width: 100%;
+        height: fit-content;
+        position: sticky;
+        bottom: 0;
+    }
+    &__bar {
+        width: 134px;
+        min-height: 5px;
+        margin: 8px auto;
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.3);
+    }
+}

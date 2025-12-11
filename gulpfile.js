@@ -20,6 +20,9 @@ const paths = {
   assets: {
     src: "src/images/**/*",
   },
+  fonts: {
+    src: "src/fonts/**/*",
+  },
   dist: "dist",
 };
 
@@ -56,11 +59,17 @@ function scripts() {
     .pipe(browserSync.stream());
 }
 
-function assets() {
-  return src("src/images/**/*", { encoding: false })
-    .pipe(dest("dist/assets/images"));
+function fonts() {
+  return src(paths.fonts.src)
+    .pipe(dest(path.join(paths.dist, "assets/fonts")))
+    .pipe(browserSync.stream());
 }
 
+function assets() {
+  return src("src/images/**/*", { encoding: false }).pipe(
+    dest("dist/assets/images")
+  );
+}
 
 function reload(done) {
   browserSync.reload();
@@ -78,10 +87,11 @@ function serve() {
   watch([paths.html.pages, paths.html.partials], html);
   watch(paths.styles.watch, styles);
   watch(paths.scripts.src, scripts);
+  watch(paths.fonts.src, fonts);
   watch(paths.assets.src, series(assets, reload));
 }
 
-const build = series(clean, parallel(html, styles, scripts, assets));
+const build = series(clean, parallel(html, styles, scripts, fonts, assets));
 const dev = series(build, serve);
 
 exports.clean = clean;
@@ -89,6 +99,7 @@ exports.html = html;
 exports.styles = styles;
 exports.scripts = scripts;
 exports.assets = assets;
+exports.fonts = fonts;
 exports.build = build;
 exports.dev = dev;
 exports.default = dev;

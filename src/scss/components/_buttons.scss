@@ -1,0 +1,25 @@
+.wswl-btn {
+    border: none;
+    font-family: var(--default-font-family) !important;
+
+    text-align: center;
+    width: 100%;
+    min-width: fit-content;
+
+    @extend .radius-md;
+    @extend .font-16;
+
+    &.btn__lg {
+        padding: var(--gap-8) var(--gap-12);
+    }
+
+    &.btn__subtle {
+        background-color: var(--primary-500);
+        color: var(--primary-50);
+    }
+
+    &.btn__white {
+        background-color: var(--white);
+        color: var(--primary-800);
+    }
+}
