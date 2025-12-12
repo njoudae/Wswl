@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "gulp dev",
     "build": "gulp build",
+    "postbuild": "rm -rf docs && cp -R dist docs",
     "clean": "gulp clean"
   },
   "devDependencies": {
