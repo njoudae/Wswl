@@ -1,0 +1,36 @@
+.text-input {
+    &__container {
+        width: 100%;
+        @include flex-element(column, flex-start, flex-start) {
+            gap: var(--gap-4);
+        }
+    }
+
+    &__label {
+        @extend .font-14;
+        @extend .weight-medium;
+
+        color: var(--white);
+        // font-family: var(--default-font-family) !important;
+    }
+
+    &__input {
+        flex: 1;
+        border: none;
+        @extend .weight-light;
+        @extend .font-16;
+        @extend .gray-700;
+        @extend .radius-sm;
+        &:focus {
+            outline: none;
+        }
+        &::placeholder {
+            @extend .gray-300;
+            @extend .weight-light;
+            font-family: var(--default-font-family) !important;
+        }
+        width: 100%;
+
+        padding: 8px 12px;
+    }
+}

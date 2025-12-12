@@ -36,6 +36,15 @@
 
         > h1 {
             @extend .font-24;
+        }
+
+        > h3 {
+            @extend .font-16;
+            padding-block-start: var(--gap-30);
+        }
+
+        > h1,
+        h3 {
             color: var(--white);
             font-weight: 400;
         }
@@ -43,7 +52,13 @@
 
     > .content {
         justify-content: center !important;
-        gap: var(--gap-120) !important;
+        gap: var(--gap-100) !important;
+    }
+
+    .subtitle {
+        @extend .font-16;
+        color: var(--white);
+        text-align: center;
     }
 
     .btns-section {

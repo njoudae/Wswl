@@ -1,0 +1,16 @@
+.form {
+    &__container {
+        width: 100%;
+    }
+
+    &__section {
+        @include flex-element(column, flex-start, stretch) {
+            gap: var(--gap-24);
+        }
+
+        .submit-btn {
+            align-self: center;
+            margin-block-start: var(--gap-32);
+        }
+    }
+}

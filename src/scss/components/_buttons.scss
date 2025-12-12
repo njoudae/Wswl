@@ -6,6 +6,10 @@
     width: 100%;
     min-width: fit-content;
 
+    @include flex-element(row, center, center) {
+        gap: var(--gap-8);
+    }
+
     @extend .radius-md;
     @extend .font-16;
 
