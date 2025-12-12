@@ -15,9 +15,9 @@
 
         <div class="form__container">
           <form class="form__section" action="" method="get" id="loginForm">
-            @@include("../partials/components/forms/_text-input.html", { label:
-            "رقم الهوية", name: "id-number", placeholder: "أدخل رقم هويتك" })
-            @@include("../partials/components/forms/_text-input.html", { label:
+            @@include("../partials/components/forms/_text-input.html", { type: "text", label:
+            "رقم الهوية", name: "idNumber", placeholder: "أدخل رقم هويتك" })
+            @@include("../partials/components/forms/_text-input.html", {type: "password", label:
             "كلمة المرور", name: "password", placeholder: "أدخل كلمة المرور"})
             @@include("../partials/components/_button-action.html", { size:
             "lg", iconName:"" , btnStyle: "subtle", action: "/login.html",
@@ -28,8 +28,8 @@
 
       @@include("../partials/layout/_home-indicator.html")
     </main>
-    <!-- <script src="/assets/js/db/usersDB.js"></script>
-    <script src="/assets/js/api/auth.js"></script>
-    <script src="/assets/js/pages/login.js"></script> -->
+    <script type="module" src="/assets/js/db/usersDB.js"></script>
+    <script type="module" src="/assets/js/api/auth.js"></script>
+    <script type="module" src="/assets/js/pages/login.js"></script>
   </body>
 </html>

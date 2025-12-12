@@ -6,6 +6,8 @@
     width: 100%;
     min-width: fit-content;
 
+    cursor: pointer;
+
     @include flex-element(row, center, center) {
         gap: var(--gap-8);
     }
@@ -18,12 +20,20 @@
     }
 
     &.btn__subtle {
-        background-color: var(--primary-500);
-        color: var(--primary-50);
+        background-color: var(--primary-700);
+        color: var(--gray-50);
+
+        &:hover {
+            background-color: var(--primary-900);
+        }
     }
 
     &.btn__white {
         background-color: var(--white);
         color: var(--primary-800);
+
+        &:hover {
+            background-color: var(--gray-300);
+        }
     }
 }
