@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  @@include("../partials/layout/_head.html")
+
+  <body>
+    <main class="phone index-page">
+      @@include("../partials/layout/_status-bar.html")
+      <section class="content">
+        <div class="logo-section">
+          @@include("../partials/components/_logo.html", { size: "lg" })
+          <h1>وُصُول</h1>
+          <h3>نحو نقل جامعي أكثر ذكاءً ورقمنة</h3>
+        </div>
+        <h4 class="subtitle">مرحبًا بعودتك مجددًا!</h4>
+
+        <div class="form__container">
+          <form class="form__section" action="" method="get" id="loginForm">
+            @@include("../partials/components/forms/_text-input.html", { type: "text", label:
+            "رقم الهوية", name: "idNumber", placeholder: "أدخل رقم هويتك" })
+            @@include("../partials/components/forms/_text-input.html", {type: "password", label:
+            "كلمة المرور", name: "password", placeholder: "أدخل كلمة المرور"})
+            @@include("../partials/components/_button-action.html", { size:
+            "lg", iconName:"" , btnStyle: "subtle", action: "/login.html",
+            className: "submit-btn", label: "تسجيل الدخول" })
+          </form>
+        </div>
+      </section>
+
+      @@include("../partials/layout/_home-indicator.html")
+    </main>
+    <script type="module" src="/assets/js/db/usersDB.js"></script>
+    <script type="module" src="/assets/js/api/auth.js"></script>
+    <script type="module" src="/assets/js/pages/login.js"></script>
+  </body>
+</html>

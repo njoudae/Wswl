@@ -1,0 +1,140 @@
+//  Base styles for borders & outlines
+
+// -- Available border & outlines colors: transparent, white, gray, black, primary-600, primary-700, primary-900
+.border-transparent {
+    @include border-color(transparent);
+}
+.border-white {
+    @include border-color(var(--white));
+}
+.border-gray {
+    @include border-color(var(--gray-200));
+}
+.border-black {
+    @include border-color(var(--gray-800));
+}
+.border-primary-200 {
+    @include border-color(var(--primary-200));
+}
+.border-primary-600 {
+    @include border-color(var(--primary-600));
+}
+.border-primary-700 {
+    @include border-color(var(--primary-700));
+}
+.border-primary-900 {
+    @include border-color(var(--primary-900));
+}
+.border-success-700 {
+    @include border-color(var(--success-700));
+}
+.border-gray-100 {
+    @include border-color(var(--gray-100));
+}
+.border-gray-200 {
+    @include border-color(var(--gray-200));
+}
+.border-gray-300 {
+    @include border-color(var(--gray-300));
+}
+.border-gray-400 {
+    @include border-color(var(--gray-400));
+}
+.border-gray-500 {
+    @include border-color(var(--gray-500));
+}
+.border-gray-600 {
+    @include border-color(var(--gray-600));
+}
+.border-gray-700 {
+    @include border-color(var(--gray-700));
+}
+
+.border-success-200 {
+    @include border-color(var(--success-200));
+}
+.border-warning-200 {
+    @include border-color(var(--warning-200));
+}
+.border-error-200 {
+    @include border-color(var(--error-200));
+}
+.border-error-300 {
+    @include border-color(var(--error-300));
+}
+.border-error-400 {
+    @include border-color(var(--error-400));
+}
+.border-error-500 {
+    @include border-color(var(--error-500));
+}
+.border-error-600 {
+    @include border-color(var(--error-600));
+}
+
+.border-info-200 {
+    @include border-color(var(--info-200));
+}
+
+.outline-transparent {
+    @include outline-color(transparent);
+}
+.outline-white {
+    @include outline-color(var(--white));
+}
+.outline-gray {
+    @include outline-color(var(--gray-200));
+}
+.outline-black {
+    @include outline-color(var(--gray-800));
+}
+
+.outline-primary-600 {
+    @include outline-color(var(--primary-600));
+}
+.outline-primary-700 {
+    @include outline-color(var(--primary-700));
+}
+.outline-primary-900 {
+    @include outline-color(var(--primary-900));
+}
+.outline-gray-100 {
+    @include outline-color(var(--gray-100));
+}
+.outline-gray-200 {
+    @include outline-color(var(--gray-200));
+}
+.outline-gray-300 {
+    @include outline-color(var(--gray-300));
+}
+
+// -- Available border & outlines widths: none, 1px, 2px, 3px, 4px
+
+.border-none {
+    @include border-width(0);
+}
+.border-1 {
+    @include border-width(1px);
+}
+.border-2 {
+    @include border-width(2px);
+}
+.border-3 {
+    @include border-width(3px);
+}
+.border-4 {
+    @include border-width(4px);
+}
+
+.outline-1 {
+    @include outline-width(1px);
+}
+.outline-2 {
+    @include outline-width(2px);
+}
+.outline-3 {
+    @include outline-width(3px);
+}
+.outline-4 {
+    @include outline-width(4px);
+}

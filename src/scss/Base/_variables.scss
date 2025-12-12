@@ -1,0 +1,295 @@
+:root {
+    // COLORS
+
+    // --- MC COLORS ---
+    --mc-green-primary: #005430;
+
+    // --- WHITE SHADES ---
+    --white: #ffffff;
+    --white-rgb: 255, 255, 255;
+
+    // --- GRAY SHADES ---
+    --gray-25: #fcfcfd;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d2d6db;
+    --gray-400: #9da4ae;
+    --gray-500: #6c737f;
+    --gray-600: #4d5761;
+    --gray-700: #384250;
+    --gray-800: #1f2a37;
+    --gray-900: #111927;
+    --gray-950: #0d121c;
+
+    --black: #161616;
+
+    // --- PRIMARY SHADES ---
+    --primary-25: #B9BCA6;
+    --primary-50: #ADB09B;
+    --primary-100: #A0A390;
+    --primary-200: #949785;
+    --primary-300: #888B7A;
+    --primary-400: #7C7E6F;
+    --primary-500: #6F7263;
+    --primary-600: #636558;
+    --primary-700: #57594D;
+    --primary-800: #4B4D42;
+    --primary-900: #3E4037;
+    --primary-950: #32342C;
+
+    // --- GOLD SHADES ---
+    --gold-25: #fffef7;
+    --gold-50: #fffef2;
+    --gold-100: #fffce6;
+    --gold-200: #fcf3bd;
+    --gold-300: #fae996;
+    --gold-400: #f7d54d;
+    --gold-500: #f5bd02;
+    --gold-600: #dba102;
+    --gold-700: #b87b02;
+    --gold-800: #945c01;
+    --gold-900: #6e3c00;
+    --gold-950: #472400;
+
+    // --- LAVENDER SHADES ---
+    --lavender-25: #fefcff;
+    --lavender-50: #f9f5fa;
+    --lavender-100: #f2e9f5;
+    --lavender-200: #e1cce8;
+    --lavender-300: #ccadd9;
+    --lavender-400: #a57bba;
+    --lavender-500: #80519f;
+    --lavender-600: #6d428f;
+    --lavender-700: #532d75;
+    --lavender-800: #3d1d5e;
+    --lavender-900: #281047;
+    --lavender-950: #16072e;
+
+    // --- ERROR SHADES ---
+    --error-25: #fffbfa;
+    --error-50: #fef3f2;
+    --error-100: #fee4e2;
+    --error-200: #fecdca;
+    --error-300: #fda29b;
+    --error-400: #f97066;
+    --error-500: #f04438;
+    --error-600: #d92d20;
+    --error-700: #b42318;
+    --error-800: #912018;
+    --error-900: #7a271a;
+    --error-950: #55160c;
+
+    // --- WARNING SHADES ---
+    --warning-25: #fffcf5;
+    --warning-50: #fffaeb;
+    --warning-100: #fef0c7;
+    --warning-200: #fedf89;
+    --warning-300: #fec84b;
+    --warning-400: #fdb022;
+    --warning-500: #f79009;
+    --warning-600: #dc6803;
+    --warning-700: #b54708;
+    --warning-800: #93370d;
+    --warning-900: #7a2e0e;
+    --warning-950: #4e1d09;
+
+    // --- SUCCESS SHADES ---
+    --success-25: #f6fef9;
+    --success-50: #ecfdf3;
+    --success-100: #dcfae6;
+    --success-200: #abefc6;
+    --success-300: #75e0a7;
+    --success-400: #47cd89;
+    --success-500: #17b26a;
+    --success-600: #079455;
+    --success-700: #067647;
+    --success-800: #085d3a;
+    --success-900: #074d31;
+    --success-950: #053321;
+
+    // --- INFO SHADES ---
+    --info-25: #f5faff;
+    --info-50: #eff8ff;
+    --info-100: #d1e9ff;
+    --info-200: #b2ddff;
+    --info-300: #84caff;
+    --info-400: #53b1fd;
+    --info-500: #2e90fa;
+    --info-600: #1570ef;
+    --info-700: #175cd3;
+    --info-800: #1849a9;
+    --info-900: #194185;
+    --info-950: #102a56;
+
+    --primary-green: var(--primary-600);
+    // FONTS
+    --default-font-family: "IBM Plex Sans Arabic", sans-serif;
+
+    --font-8: 0.8rem;
+
+    --font-10: 1rem;
+
+    --font-12: 1.2rem;
+    --font-14: 1.4rem;
+    --font-16: 1.6rem;
+    --font-18: 1.8rem;
+
+    --font-20: 2rem;
+    --font-22: 2.2rem;
+    --font-24: 2.4rem;
+    --font-26: 2.6rem;
+    --font-28: 2.8rem;
+
+    --font-30: 3rem;
+    --font-32: 3.2rem;
+    --font-34: 3.4rem;
+    --font-36: 3.6rem;
+
+    --font-40: 4rem;
+    --font-42: 4.2rem;
+    --font-44: 4.4rem;
+    --font-46: 4.6rem;
+    --font-48: 4.8rem;
+    --font-50: 5rem;
+    --font-60: 6rem;
+    --font-70: 7rem;
+    --font-80: 8rem;
+    --font-90: 9rem;
+    --font-100: 10rem;
+
+    // TEXTS COLORS
+    --text-black: var(--primary-black);
+    --text-white: var(--white);
+
+    // BTNS
+    --btn-font-size: var(--font-16);
+
+    // GAPS
+    --gap-0: 0;
+    --gap-1: 0.1rem;
+    --gap-2: 0.2rem;
+    --gap-3: 0.3rem;
+
+    --gap-4: 0.4rem;
+    --gap-5: 0.5rem;
+    --gap-6: 0.6rem;
+    --gap-8: 0.8rem;
+
+    --gap-10: 1rem;
+    --gap-12: 1.2rem;
+    --gap-15: 1.5rem;
+    --gap-16: 1.6rem;
+    --gap-18: 1.8rem;
+    --gap-20: 2rem;
+    --gap-22: 2.2rem;
+    --gap-24: 2.4rem;
+    --gap-26: 2.6rem;
+    --gap-30: 3rem;
+    --gap-32: 3.2rem;
+    --gap-34: 3.4rem;
+    --gap-36: 3.6rem;
+    --gap-38: 3.8rem;
+    --gap-40: 4rem;
+    --gap-42: 4.2rem;
+    --gap-44: 4.4rem;
+    --gap-45: 4.5rem;
+    --gap-48: 4.8rem;
+    --gap-50: 5rem;
+    --gap-57: 5.7rem;
+    --gap-60: 6rem;
+    --gap-70: 7rem;
+    --gap-80: 8rem;
+    --gap-90: 9rem;
+    --gap-100: 10rem;
+    --gap-120: 12rem;
+    --gap-130: 13rem;
+    --gap-140: 14rem;
+    --gap-150: 15rem;
+    --gap-160: 16rem;
+
+    // WEIGHTS
+    --weight-100: 100;
+    --weight-200: 200;
+    --weight-300: 300;
+    --weight-400: 400;
+    --weight-500: 500;
+    --weight-600: 600;
+    --weight-700: 700;
+    --weight-800: 800;
+    --weight-900: 900;
+
+    // SIZES
+    --desktop-width: 132rem;
+    --tab-width: 95%;
+    --width-1200: 120rem;
+    --width-full: 100%;
+    --height-full: 100%;
+
+    --width-120: 12rem;
+    --height-40: 4rem;
+
+    // OPACITIES
+    --opacity-0: 0;
+    --opacity-10: 0.1;
+    --opacity-20: 0.2;
+    --opacity-30: 0.3;
+    --opacity-40: 0.4;
+    --opacity-50: 0.5;
+    --opacity-60: 0.6;
+    --opacity-70: 0.7;
+    --opacity-80: 0.8;
+    --opacity-90: 0.9;
+    --opacity-100: 1;
+
+    // BORDER RADIUS
+    --border-radius-0: 0;
+    --border-radius-1: 0.1rem;
+    --border-radius-2: 0.2rem;
+    --border-radius-4: 0.4rem;
+    --border-radius-6: 0.6rem;
+    --border-radius-8: 0.8rem;
+    --border-radius-10: 1rem;
+    --border-radius-12: 1.2rem;
+    --border-radius-16: 1.6rem;
+    --border-radius-20: 2rem;
+    --border-radius-24: 2.4rem;
+    --border-radius-26: 2.6rem;
+    --border-radius-30: 3rem;
+    --border-radius-32: 3.2rem;
+    --border-radius-34: 3.4rem;
+    --border-radius-38: 3.8rem;
+    --border-radius-40: 4rem;
+    --border-radius-90: 9rem;
+    --border-radius-full: 999px;
+
+    // TRANSITIONS
+    --transition-3ms: all 0.3s ease-in-out;
+
+    // LINE HEIGHTS
+    --default-line-height: 1.6em;
+
+    // BOX SHADOWS
+
+    // Backgrounds
+    --gray-background: var(--gray-shade-1);
+    --white-background: var(--white);
+
+    // BLURE
+
+    // SHADOWS
+    --shadow-xs: 0 1px 2px 0 rgba(16, 24, 49, 0.05);
+    --shadow-sm: 0 1px 3px 0 rgba(16, 24, 49, 0.1),
+        0 1px 2px 0 rgba(16, 24, 49, 0.06);
+    --shadow-md: 0 4px 8px -2px rgba(16, 24, 49, 0.1),
+        0 2px 4px -2px rgba(16, 24, 49, 0.06);
+    --shadow-lg: 0 12px 16px -6px rgba(16, 24, 49, 0.08),
+        0 4px 6px -2px rgba(16, 24, 49, 0.03);
+    --shadow-xl: 0 20px 24px -4px rgba(16, 24, 49, 0.08),
+        0 8px 8px -4px rgba(16, 24, 49, 0.03);
+    --shadow-2xl: 0 240px 48px -12px rgba(16, 24, 49, 0.18);
+    --shadow-3xl: 0 32px 64px -12px rgba(16, 24, 49, 0.14);
+
+    --mc-shadow: 0 4px 30px 0 rgba(16, 24, 40, 0.08);
+    --mc-shadow-2: 0 4px 18px 0 rgba(26, 42, 71, 0.15);
+}

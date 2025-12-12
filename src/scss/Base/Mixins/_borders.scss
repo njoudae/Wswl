@@ -1,0 +1,35 @@
+// Border & Outlines mixins
+
+// -- Default border & outline styles
+%default-border {
+    border: 1px solid transparent !important;
+}
+%default-outline {
+    outline: 1px solid transparent !important;
+}
+
+// -- Colors
+@mixin border-color($color) {
+    @extend %default-border;
+    @if $color {
+        border-color: $color !important;
+    }
+}
+@mixin outline-color($color) {
+    @extend %default-outline;
+    @if $color {
+        outline-color: $color !important;
+    }
+} // -- Widths
+@mixin border-width($width) {
+    @extend %default-border;
+    @if $width {
+        border-width: $width !important;
+    }
+}
+@mixin outline-width($width) {
+    @extend %default-outline;
+    @if $width {
+        outline-width: $width !important;
+    }
+}

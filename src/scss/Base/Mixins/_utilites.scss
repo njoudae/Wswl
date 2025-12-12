@@ -1,0 +1,18 @@
+// Flex Uses Mixin
+
+@mixin flex-element(
+    $direction: row,
+    $justify: center,
+    $align: center,
+    $wrap: wrap
+) {
+    display: flex;
+    @if $direction == "column" {
+        flex-flow: column $wrap;
+    } @else {
+        flex-flow: row $wrap;
+    }
+    justify-content: $justify;
+    align-items: $align;
+    @content;
+}

@@ -1,0 +1,19 @@
+.logo {
+    &__container {
+        height: fit-content;
+        width: fit-content;
+        img {
+            height: auto;
+            width: 100%;
+            object-fit: contain;
+            display: block;
+        }
+    }
+
+    &__md {
+        width: var(--gap-60);
+    }
+    &__lg {
+        width: var(--gap-160);
+    }
+}

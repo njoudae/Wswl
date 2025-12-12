@@ -1,0 +1,30 @@
+.status-bar {
+    &__section {
+        width: 100%;
+        height: auto;
+        min-height: var(--gap-57);
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        > img {
+            width: 125px;
+            height: auto;
+            display: block;
+            position: absolute;
+            z-index: 4;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    }
+    &__container {
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+}

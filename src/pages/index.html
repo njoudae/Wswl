@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  @@include("../partials/layout/_head.html")
+
+  <body>
+    <main class="phone index-page">
+      @@include("../partials/layout/_status-bar.html")
+      <section class="content">
+        <div class="logo-section">
+          @@include("../partials/components/_logo.html", { size: "lg" })
+          <h1>وُصُول</h1>
+          <h3>نحو نقل جامعي أكثر ذكاءً ورقمنة</h3>
+        </div>
+        <div class="btns-section">
+          @@include("../partials/components/_button-link.html", { size: "lg", iconName:"",
+          btnStyle: "white", link: "/signup.html", label: "مستخدم جديد" })
+          @@include("../partials/components/_button-link.html", { size: "lg", iconName:"",
+          btnStyle: "subtle", link: "/login.html", label: "تسجيل الدخول" })
+        </div>
+      </section>
+
+      @@include("../partials/layout/_home-indicator.html")
+    </main>
+    <script type="module" src="/assets/js/main.js"></script>
+  </body>
+</html>
