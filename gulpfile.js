@@ -78,7 +78,6 @@ function serve() {
   watch([paths.html.pages, paths.html.partials], html);
   watch(paths.styles.watch, styles);
   watch(paths.scripts.src, scripts);
-  watch(paths.fonts.src, fonts);
   watch(paths.assets.src, series(assets, reload));
 }
 
