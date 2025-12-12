@@ -1,0 +1,36 @@
+.profile__block {
+    @include flex-element(row, flex-start, center) {
+        gap: var(--gap-12);
+    }
+    padding-block-end: var(--gap-12);
+    box-shadow: -1px 16px 24px -16px rgba(0, 0, 0, 0.56);
+
+    &-img {
+        width: 56px;
+        height: 56px;
+        max-width: 56px;
+        max-height: 56px;
+        @extend .radius-full;
+        object-fit: cover;
+    }
+
+    &-info {
+        @include flex-element(column, flex-start, flex-start) {
+            gap: var(--gap-4);
+        }
+    }
+
+    &-name {
+        @extend .font-16;
+        @extend .weight-medium;
+        color: var(--black);
+    }
+
+    &-tags {
+        flex: 0 0 1;
+        width: 100%;
+        @include flex-element(row, flex-start, center) {
+            gap: var(--gap-12);
+        }
+    }
+}

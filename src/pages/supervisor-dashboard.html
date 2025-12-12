@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  @@include("../partials/layout/_head.html")
+  <body>
+    <main class="phone">
+      @@include("../partials/layout/_status-bar.html")
+
+      <section class="content">
+        @@include("../partials/blocks/_profile-block.html", { avatar:
+        "assets/images/avatar-male.png", name: "أ. صالح محمد", tagText1:
+        "مشرف حافلات", tagText2: "قسم النقل الجامعي" })
+      </section>
+
+      @@include("../partials/layout/_home-indicator.html")
+
+      <script
+        type="module"
+        src="assets/js/pages/supervisor-dashboard.js"
+      ></script>
+    </main>
+  </body>
+</html>

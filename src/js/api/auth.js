@@ -76,13 +76,13 @@ export function redirectByRole(user) {
     //   window.location.href = "/admin-dashboard.html";
     //   break;
     case "driver":
-      window.location.href = "/users/driver-dashboard.html";
+      window.location.href = "/driver-dashboard.html";
       break;
     case "supervisor":
-      window.location.href = "/users/supervisor-dashboard.html";
+      window.location.href = "/supervisor-dashboard.html";
       break;
     case "passenger":
-      window.location.href = "/users/passenger-dashboard.html";
+      window.location.href = "/passenger-dashboard.html";
       break;
     default:
       // Fallback if role is unknown.

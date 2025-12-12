@@ -1,0 +1,29 @@
+.tag {
+    &__container {
+        @extend .font-10;
+        @extend .radius-sm;
+        @extend .gray-200-bg;
+        width: fit-content;
+        padding: var(--gap-4) var(--gap-12);
+
+        &-primary {
+            @extend .primary-25-bg;
+            color: var(--black);
+        }
+
+        &-green {
+            @extend .success-100-bg;
+            color: var(--success-700);
+        }
+
+        &-red {
+            @extend .error-100-bg;
+            color: var(--error-700);
+        }
+
+        &-yellow {
+            @extend .warning-100-bg;
+            color: var(--warning-700);
+        }
+    }
+}

@@ -670,7 +670,7 @@
   background-color: var(--gray-100);
 }
 
-.gray-200-bg {
+.gray-200-bg, .tag__container {
   background-color: var(--gray-200);
 }
 
@@ -706,7 +706,7 @@
   background-color: var(--gray-950);
 }
 
-.primary-25-bg {
+.primary-25-bg, .tag__container-primary {
   background-color: var(--primary-25);
 }
 
@@ -858,7 +858,7 @@
   background-color: var(--error-50);
 }
 
-.error-100-bg {
+.error-100-bg, .tag__container-red {
   background-color: var(--error-100);
 }
 
@@ -906,7 +906,7 @@
   background-color: var(--warning-50);
 }
 
-.warning-100-bg {
+.warning-100-bg, .tag__container-yellow {
   background-color: var(--warning-100);
 }
 
@@ -954,7 +954,7 @@
   background-color: var(--success-50);
 }
 
-.success-100-bg {
+.success-100-bg, .tag__container-green {
   background-color: var(--success-100);
 }
 
@@ -1223,7 +1223,7 @@ a {
   text-decoration: none;
 }
 
-.font-10 {
+.font-10, .tag__container {
   font-size: var(--font-10);
 }
 
@@ -1235,7 +1235,7 @@ a {
   font-size: var(--font-14);
 }
 
-.font-16, .index-page .subtitle, .index-page .logo-section > h3, .text-input__input, .wswl-btn {
+.font-16, .index-page .subtitle, .index-page .logo-section > h3, .profile__block-name, .text-input__input, .wswl-btn {
   font-size: var(--font-16);
 }
 
@@ -1387,7 +1387,7 @@ a {
   font-weight: var(--weight-400);
 }
 
-.weight-medium, .text-input__label {
+.weight-medium, .profile__block-name, .text-input__label {
   font-weight: var(--weight-500);
 }
 
@@ -2154,7 +2154,7 @@ main.phone > .content {
   border-radius: var(--border-radius-2);
 }
 
-.radius-sm, .text-input__input {
+.radius-sm, .text-input__input, .tag__container {
   border-radius: var(--border-radius-4);
 }
 
@@ -2174,7 +2174,7 @@ main.phone > .content {
   border-radius: var(--border-radius-38);
 }
 
-.radius-full {
+.radius-full, .profile__block-img {
   border-radius: var(--border-radius-full);
 }
 
@@ -2226,6 +2226,23 @@ main.phone > .content {
   background-color: var(--gray-300);
 }
 
+.tag__container {
+  width: fit-content;
+  padding: var(--gap-4) var(--gap-12);
+}
+.tag__container-primary {
+  color: var(--black);
+}
+.tag__container-green {
+  color: var(--success-700);
+}
+.tag__container-red {
+  color: var(--error-700);
+}
+.tag__container-yellow {
+  color: var(--warning-700);
+}
+
 .form__container {
   width: 100%;
 }
@@ -2265,6 +2282,42 @@ main.phone > .content {
 .text-input__input {
   width: 100%;
   padding: 8px 12px;
+}
+
+.profile__block {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--gap-12);
+  padding-block-end: var(--gap-12);
+  box-shadow: -1px 16px 24px -16px rgba(0, 0, 0, 0.56);
+}
+.profile__block-img {
+  width: 56px;
+  height: 56px;
+  max-width: 56px;
+  max-height: 56px;
+  object-fit: cover;
+}
+.profile__block-info {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--gap-4);
+}
+.profile__block-name {
+  color: var(--black);
+}
+.profile__block-tags {
+  flex: 0 0 1;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--gap-12);
 }
 
 .status-bar__section {
