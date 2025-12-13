@@ -53,6 +53,11 @@
     > .content {
         justify-content: center !important;
         gap: var(--gap-100) !important;
+        .text-input {
+            &__label {
+                color: var(--white);
+            }
+        }
     }
 
     .subtitle {

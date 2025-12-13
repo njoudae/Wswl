@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>وُصُــول</title>
+    <link rel="stylesheet" type="" href="assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="assets/js/face-api.min.js"></script>
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Welcome Screen -->
+      <!-- First Role Selection Screen -->
+      <div id="role-screen" class="screen active">
+        <div class="role-content">
+          <!-- Language Dropdown -->
+          <div class="language-dropdown">
+            <div class="custom-dropdown">
+              <button class="dropdown-btn" onclick="toggleLanguageDropdown()">
+                <span class="dropdown-arrow">▼</span>
+                <span class="translation-icon">Aa</span>
+              </button>
+              <div class="dropdown-menu" id="language-dropdown-menu">
+                <div
+                  class="dropdown-item"
+                  onclick="changeLanguage('ar')"
+                  data-lang="ar"
+                >
+                  عربي
+                </div>
+                <div
+                  class="dropdown-item"
+                  onclick="changeLanguage('en')"
+                  data-lang="en"
+                >
+                  English
+                </div>
+                <div
+                  class="dropdown-item"
+                  onclick="changeLanguage('ur')"
+                  data-lang="ur"
+                >
+                  اردو
+                </div>
+                <div
+                  class="dropdown-item"
+                  onclick="changeLanguage('bn')"
+                  data-lang="bn"
+                >
+                  বাংলা
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h1 class="role-title">اختيار نوع المستخدم</h1>
+
+          <div class="role-buttons">
+            <button class="btn btn-primary" onclick="selectRole('student')">
+              طالب
+            </button>
+            <button class="btn btn-secondary" onclick="selectRole('driver')">
+              سائق
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="welcome-screen" class="screen">
+        <div class="welcome-content">
+          <div class="language-dropdown">
+            <div class="custom-dropdown">
+              <button class="dropdown-btn" onclick="toggleLanguageDropdown()">
+                <span class="dropdown-arrow">▼</span>
+                <span class="translation-icon">Aa</span>
+              </button>
+              <div class="dropdown-menu" id="language-dropdown-menu">
+                <div
+                  class="dropdown-item"
+                  onclick="changeLanguage('ar')"
+                  data-lang="ar"
+                >
+                  <span>عربي</span>
+                </div>
+                <div
+                  class="dropdown-item"
+                  onclick="changeLanguage('en')"
+                  data-lang="en"
+                >
+                  <span>English</span>
+                </div>
+                <div
+                  class="dropdown-item"
+                  onclick="changeLanguage('ur')"
+                  data-lang="ur"
+                >
+                  <span>اردو</span>
+                </div>
+                <div
+                  class="dropdown-item"
+                  onclick="changeLanguage('bn')"
+                  data-lang="bn"
+                >
+                  <span>বাংলা</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="logo">
+            <i class="truck-icon">🚛</i>
+          </div>
+          <h1 id="welcome-title">وُصُــول</h1>
+          <p id="welcome-subtitle">نظام النقل الجامعي الذكي</p>
+          <div class="welcome-buttons">
+            <button
+              class="btn btn-primary"
+              onclick="showScreen('login-screen') "
+              id="login-btn"
+            >
+              تسجيل الدخول
+            </button>
+            <button
+              class="btn btn-secondary"
+              onclick="showScreen('register-screen')"
+              id="register-btn"
+            >
+              التسجيل
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Registration Screen -->
+      <div id="register-screen" class="screen">
+        <div class="header">
+          <button class="back-btn" onclick="showScreen('welcome-screen')">
+            ←
+          </button>
+          <h2>تسجيل السائق</h2>
+        </div>
+        <div class="form-container">
+          <form id="register-form" autocomplete="off">
+            <div class="form-group">
+              <label for="reg-name">الاسم الكامل</label>
+              <input type="text" id="reg-name" required />
+            </div>
+            <div class="form-group">
+              <label for="reg-national-id">رقم الهوية</label>
+              <input type="text" id="reg-national-id" required />
+            </div>
+            <div class="form-group">
+              <label for="reg-truck-number">رقم الحافلة</label>
+              <input type="text" id="reg-truck-number" required />
+            </div>
+            <div class="form-group">
+              <label for="reg-cargo-type">الحي</label>
+              <select id="reg-cargo-type" required>
+                <option value="">اختر الحي</option>
+                <option value="general">المنسك</option>
+                <option value="hazardous">البديع</option>
+                <option value="refrigerated">الخالدية</option>
+                <option value="bulk">المحالة</option>
+                <option value="container">الموظفين</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>صورة السائق</label>
+              <div class="photo-capture" id="reg-photo-capture">
+                <video id="reg-video" autoplay muted></video>
+                <canvas id="reg-canvas" style="display: none"></canvas>
+                <div class="photo-controls">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onclick="startCamera('reg')"
+                  >
+                    تشغيل الكاميرا
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="capturePhoto('reg')"
+                  >
+                    التقاط صورة
+                  </button>
+                </div>
+                <div id="reg-photo-preview" class="photo-preview"></div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              تسجيل
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Login Screen -->
+      <div id="login-screen" class="screen">
+        <div class="header">
+          <button class="back-btn" onclick="showScreen('welcome-screen')">
+            ←
+          </button>
+          <h2>تسجيل دخول السائق</h2>
+        </div>
+        <div class="form-container">
+          <form id="login-form" autocomplete="off">
+            <div class="form-group">
+              <label for="login-national-id">رقم الهوية</label>
+              <input type="text" id="login-national-id" required />
+            </div>
+            <div class="form-group">
+              <label>التحقق من الوجه</label>
+              <div class="photo-capture" id="login-photo-capture">
+                <video id="login-video" autoplay muted></video>
+                <canvas id="login-canvas" style="display: none"></canvas>
+                <div class="photo-controls">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onclick="startCamera('login')"
+                  >
+                    تشغيل الكاميرا
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="capturePhoto('login')"
+                  >
+                    التقاط صورة
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="verifyFace()"
+                  >
+                    التحقق من الوجه
+                  </button>
+                </div>
+                <div id="login-photo-preview" class="photo-preview"></div>
+                <div id="verification-status" class="verification-status"></div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              تسجيل الدخول
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Driver Dashboard -->
+      <div id="dashboard-screen" class="screen">
+        <div class="header">
+          <h2>لوحة تحكم السائق</h2>
+          <button class="logout-btn" onclick="logout()">تسجيل الخروج</button>
+        </div>
+        <div class="dashboard-content">
+          <div class="driver-info">
+            <div class="driver-photo">
+              <img id="driver-photo" src="" alt="صورة السائق" />
+            </div>
+            <div class="driver-details">
+              <h3 id="driver-name"></h3>
+              <p id="driver-national-id"></p>
+              <p id="driver-truck-number"></p>
+              <p id="driver-cargo-type"></p>
+            </div>
+          </div>
+          <div class="dashboard-actions">
+            <button
+              class="btn btn-primary btn-full"
+              onclick="showScreen('permit-screen')"
+            >
+              طلب تصريح جديد
+            </button>
+            <button
+              class="btn btn-secondary btn-full"
+              onclick="showScreen('history-screen')"
+            >
+              عرض السجل
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Permit Request Screen -->
+      <div id="permit-screen" class="screen">
+        <div class="header">
+          <button class="back-btn" onclick="showScreen('dashboard-screen')">
+            ←
+          </button>
+          <h2>تحضير</h2>
+        </div>
+        <div class="form-container">
+          <form id="permit-form" autocomplete="off">
+            <div class="form-group">
+              <label for="permit-date">التاريخ</label>
+              <input type="date" id="permit-date" required />
+            </div>
+            <div class="form-group">
+              <label for="permit-time">الفترة الزمنية</label>
+              <select id="permit-time" required>
+                <option value="">اختر الفترة الزمنية</option>
+                <option value="06:00-10:00">06:00 - 10:00</option>
+                <option value="10:00-14:00">10:00 - 14:00</option>
+                <option value="14:00-18:00">14:00 - 18:00</option>
+                <option value="18:00-22:00">18:00 - 22:00</option>
+                <option value="22:00-02:00">22:00 - 02:00</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="permit-route">المسار</label>
+              <select id="permit-route" required>
+                <option value="">اختر المسار</option>
+                <option value="north-highway">
+                  الطريق الشمالي (المدينة أ → المدينة ب)
+                </option>
+                <option value="south-highway">
+                  الطريق الجنوبي (المدينة أ → المدينة ج)
+                </option>
+                <option value="east-highway">
+                  الطريق الشرقي (المدينة أ → المدينة د)
+                </option>
+                <option value="west-highway">
+                  الطريق الغربي (المدينة أ → المدينة ه)
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="permit-purpose">ملاحظات</label>
+              <textarea
+                id="permit-purpose"
+                rows="3"
+                placeholder="اكتب ملاحظاتك   "
+              ></textarea>
+            </div>
+            <!-- ...existing code... -->
+            <a href="map.html" class="btn btn-primary btn-full"> بدء التتبع</a>
+            <!-- ...existing code... -->
+          </form>
+        </div>
+      </div>
+
+      <!-- History Screen -->
+      <div id="history-screen" class="screen">
+        <div class="header">
+          <button class="back-btn" onclick="showScreen('dashboard-screen')">
+            ←
+          </button>
+          <h2>سجل الدوام</h2>
+        </div>
+        <div class="history-container">
+          <div id="history-list" class="history-list">
+            <!-- History items will be populated here -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <script defer src="assets/js/face-api.min.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

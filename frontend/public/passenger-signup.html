@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Driver Signup</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script
+      defer
+      src="https://unpkg.com/face-api.js@0.22.2/dist/face-api.min.js"
+    ></script>
+    <script defer src="/js/common.js"></script>
+    <script defer src="/js/signup.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Passenger Signup</h1>
+    </header>
+    <main>
+      <p>Driver signup with face enrollment.</p>
+      <form id="signup-form" enctype="multipart/form-data"  method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" required />
+        </div>
+        <div class="form-group">
+          <label for="national_id">National ID</label>
+          <input id="national_id" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input id="phone" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" required />
+        </div>
+        <div class="form-group">
+          <label for="bus_model">Bus Model</label>
+          <input id="bus_model" required />
+        </div>
+        <div class="form-group">
+          <label for="bus_number">Bus Number</label>
+          <input id="bus_number" required />
+        </div>
+        <div class="form-group">
+          <label for="health_report">Health Report (PDF or Image)</label>
+          <input
+            id="health_report"
+            name="health_report"
+            type="file"
+            accept="application/pdf,image/*"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="maintenance_report"
+            >Bus Maintenance Report (PDF or Image)</label
+          >
+          <input
+            id="maintenance_report"
+            name="maintenance_report"
+            type="file"
+            accept="application/pdf,image/*"
+            required
+          />
+        </div>
+
+        <h3>Face Capture</h3>
+        <p>Allow camera access, align your face, then capture.</p>
+        <video
+          id="video"
+          autoplay
+          muted
+          playsinline
+          width="400"
+          height="300"
+        ></video>
+        <canvas
+          id="snapshot"
+          width="400"
+          height="300"
+          style="display: none"
+        ></canvas>
+        <div class="form-group">
+          <button type="button" id="capture-btn" class="secondary">
+            Capture Face
+          </button>
+        </div>
+
+        <button type="submit" class="primary">Sign Up</button>
+        <div id="status" class="error"></div>
+        <div id="success" class="success"></div>
+      </form>
+      <p>Already registered? <a href="./login.html">Go to Login</a></p>
+    </main>
+  </body>
+</html>

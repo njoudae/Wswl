@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Select Role</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        padding-top: 100px;
+      }
+      h1 {
+        margin-bottom: 40px;
+      }
+      .btn {
+        display: inline-block;
+        margin: 10px;
+        padding: 14px 24px;
+        font-size: 18px;
+        cursor: pointer;
+        border: none;
+        border-radius: 6px;
+        background-color: #3498db;
+        color: white;
+        transition: background-color 0.2s;
+      }
+      .btn:hover {
+        background-color: #2980b9;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Select Your Role</h1>
+    <button class="btn" onclick="goTo('driver')">Driver</button>
+    <button class="btn" onclick="goTo('passenger')">Passenger</button>
+    <button class="btn" onclick="goTo('supervisor')">Supervisor</button>
+
+    <script>
+      function goTo(role) {
+        window.location.href = `./signup-${role}.html`;
+      }
+    </script>
+  </body>
+</html>

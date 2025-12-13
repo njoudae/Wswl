@@ -714,7 +714,7 @@
   background-color: var(--primary-50);
 }
 
-.primary-100-bg {
+.primary-100-bg, .driver-signup-page h6 {
   background-color: var(--primary-100);
 }
 
@@ -2267,11 +2267,12 @@ main.phone > .content {
   gap: var(--gap-4);
 }
 .text-input__label {
-  color: var(--white);
+  color: var(--black);
 }
 .text-input__input {
-  flex: 1;
   border: none;
+  border-block-end: 1px solid var(--gray-300);
+  flex: 1;
 }
 .text-input__input:focus {
   outline: none;
@@ -2399,6 +2400,9 @@ main.phone > .content {
 .index-page > .content {
   justify-content: center !important;
   gap: var(--gap-100) !important;
+}
+.index-page > .content .text-input__label {
+  color: var(--white);
 }
 .index-page .subtitle {
   color: var(--white);

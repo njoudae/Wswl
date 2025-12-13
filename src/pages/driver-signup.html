@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  @@include("../partials/layout/_head.html")
+
+  <body>
+    <main class="phone driver-signup-page">
+      @@include("../partials/layout/_status-bar.html")
+      <section class="content">
+        <h4>إنشاء حساب</h4>
+        <form class="form__section" action="" method="get" id="loginForm">
+          <h6>البيانات الشخصية</h6>
+          <div class="form__element text-input__container">
+            <label class="text-input__label" for="username"
+              >الاسم الثلاثي</label
+            >
+            <input
+              class="text-input__input"
+              type="text"
+              id="username"
+              name="username"
+              placeholder="أدخل اسمك الثلاثي"
+            />
+          </div>
+          <div class="form__element text-input__container">
+            <label class="text-input__label" for="idNumber">رقم الهوية</label>
+            <input
+              class="text-input__input"
+              type="text"
+              id="idNumber"
+              name="idNumber"
+              placeholder="أدخل رقم هويتك"
+            />
+          </div>
+          <div class="form__element text-input__container">
+            <label class="text-input__label" for="idNumber">الصورة الشخصية</label>
+            <input
+              class="text-input__input"
+              type="camera"
+              id="idNumber"
+              name="idNumber"
+              placeholder="ارفق صورة شخصية"
+            />
+          </div>
+
+          <h6>بيانات الحافلة</h6>
+          <div class="form__element text-input__container">
+            <label class="text-input__label" for="busNumber">رقم الحافلة</label>
+            <input
+              class="text-input__input"
+              type="busNumber"
+              id="busNumber"
+              name="busNumber"
+              placeholder="أدخل رقم الحافلة"
+            />
+          </div>
+          <div class="form__element text-input__container">
+            <label class="text-input__label" for="busModel"
+              >موديل الحافلة</label
+            >
+            <input
+              class="text-input__input"
+              type="busModel"
+              id="busModel"
+              name="busModel"
+              placeholder="أدخل موديل الحافلة"
+            />
+          </div>
+
+          <h6>المرفقات المطلوبة</h6>
+          <div class="form__element text-input__container">
+            <label class="text-input__label" for="busReport"
+              >تقرير الصيانة للمركبة</label
+            >
+            <input
+              class="text-input__input"
+              type="file"
+              id="busReport"
+              name="busReport"
+            />
+          </div>
+          <div class="form__element text-input__container">
+            <label class="text-input__label" for="healthReport"
+              >تقرير طبي</label
+            >
+            <input
+              class="text-input__input"
+              type="file"
+              id="healthReport"
+              name="healthReport"
+            />
+          </div>
+
+          @@include("../partials/components/_button-link.html", { size: "lg",
+          iconName:"", btnStyle: "subtle", link: "login.html", label: "التالي"
+          })
+        </form>
+      </section>
+
+      @@include("../partials/layout/_home-indicator.html")
+    </main>
+    <script type="module" src="assets/js/main.js"></script>
+  </body>
+</html>

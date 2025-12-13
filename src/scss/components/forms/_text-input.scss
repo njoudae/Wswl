@@ -10,13 +10,14 @@
         @extend .font-14;
         @extend .weight-medium;
 
-        color: var(--white);
+        color: var(--black);
         // font-family: var(--default-font-family) !important;
     }
 
     &__input {
-        flex: 1;
         border: none;
+        border-block-end: 1px solid var(--gray-300);
+        flex: 1;
         @extend .weight-light;
         @extend .font-16;
         @extend .gray-700;

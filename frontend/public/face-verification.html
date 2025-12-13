@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Face Verification</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script defer src="https://unpkg.com/face-api.js@0.22.2/dist/face-api.min.js"></script>
+  <script defer src="/js/common.js"></script>
+  <script defer src="/js/face-verification.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Face Verification</h1>
+  </header>
+  <main>
+    <p>Align your face with the camera and click Verify.</p>
+    <video id="video" autoplay muted playsinline width="400" height="300"></video>
+    <canvas id="snapshot" width="400" height="300" style="display:none;"></canvas>
+    <div class="form-group">
+      <button id="verify-btn" class="primary">Verify Face</button>
+    </div>
+    <div id="status" class="error"></div>
+  </main>
+</body>
+</html>

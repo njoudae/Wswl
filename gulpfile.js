@@ -2,20 +2,27 @@ const { src, dest, series, parallel, watch } = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 const fileInclude = require("gulp-file-include");
 const browserSync = require("browser-sync").create();
-const del = require("del"); // <- here
+const del = require("del");
 const path = require("path");
 
 const paths = {
   html: {
     pages: "src/pages/**/*.html",
     partials: "src/partials/**/*.html",
+    temp: "temp.html", // same level as gulpfile
   },
   styles: {
-    src: "src/scss/main.scss",
-    watch: "src/scss/**/*.scss",
+    src: ["src/scss/main.scss", "styles.css"],
+    watch: ["src/scss/**/*.scss", "styles.css"],
   },
   scripts: {
-    src: "src/js/**/*.js",
+    src: [
+      "src/js/**/*.js", // scripts under src/js
+      "*.js", // root-level scripts next to gulpfile
+      "!gulpfile.js",
+      "!gulpconfig.js",
+      "!gulp.config.js",
+    ],
   },
   assets: {
     src: "src/images/**/*",
@@ -28,7 +35,7 @@ function clean() {
 }
 
 function html() {
-  return src(paths.html.pages)
+  return src([paths.html.pages, paths.html.temp])
     .pipe(
       fileInclude({
         prefix: "@@",
@@ -57,8 +64,8 @@ function scripts() {
 }
 
 function assets() {
-  return src("src/images/**/*", { encoding: false }).pipe(
-    dest("dist/assets/images")
+  return src(paths.assets.src, { encoding: false }).pipe(
+    dest(path.join(paths.dist, "assets/images"))
   );
 }
 
@@ -75,7 +82,7 @@ function serve() {
     port: 3000,
   });
 
-  watch([paths.html.pages, paths.html.partials], html);
+  watch([paths.html.pages, paths.html.partials, paths.html.temp], html);
   watch(paths.styles.watch, styles);
   watch(paths.scripts.src, scripts);
   watch(paths.assets.src, series(assets, reload));
